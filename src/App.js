@@ -1,12 +1,11 @@
-import React, {Fragment} from 'react';
-import Counter from "./Counter";
-import Random from "./Random";
+import React from 'react';
+import UltimateMachine from "./UltimateMachine";
+import './machine.css';
 
 const App = () => (
-    <Fragment>
-        <Counter/>
-        <Random/>
-    </Fragment>
+    <main>
+        <UltimateMachine/>
+    </main>
 );
 
 export default App;
