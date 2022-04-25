@@ -28,7 +28,7 @@ const Counter3 = () => {
         // once when the component is first mounted.
         //
         // This shows how we can run useEffect, not only when data has been changed, but we can also run side effects once when the component mounts.
-    )
+    );
 
     const onCountClickHandler = () => {
         setCounter(c => c + 1)

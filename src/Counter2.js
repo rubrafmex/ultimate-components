@@ -44,7 +44,7 @@ const Counter2 = () => {
         // x === z // this will give false, because even when contents are the same, we compare references and x and z have different references
         // This is basic javascript behaviour, and it applies to complex types such as objects, arrays and functions.
         // Base types such as strings and integers are compared by value.
-    )
+    );
 
     const onCountClickHandler = () => {
         setCounter(c => c + 1)
