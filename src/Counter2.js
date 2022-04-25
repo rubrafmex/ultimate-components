@@ -20,6 +20,30 @@ const Counter2 = () => {
         //
         // We can pass several dependencies, and they can be any valid value in javascript, the useEffect function is still processed on each render,
         // BUT the callback will only be executed if any of the dependencies in the array changes.
+        //
+        //
+        // >>>>>>>> Understanding shallow dependency checks:
+        //
+        // As it is mentioned above, React will check everything that is inside the dependency array to see if it has changed.
+        // It is Important to know that React performs a Shallow check on the dependencies, meaning that
+        // it only compares values for simple types such as integers and strings, while it compares references for things such as
+        // objects, arrays and functions, so a shallow check will not compare the content of a complex data type. The reason for this is performance.
+        //
+        //
+        // Some notes over shallow check, open browser console and try:
+        // const x = {val: 10}
+        // const y = x // x and y will store the reference of the actual object in memory
+        // x === y // will return true
+        // if you modify x by doing:
+        // x['val2'] = 30
+        // x === y // will still be true because y will have also the new property added
+        // So it is true because we compare references
+        // Now we create a new object with the contents of x (we are making a copy of x)
+        // const z = {...x}
+        // now the contents of x and z are the same
+        // x === z // this will give false, because even when contents are the same, we compare references and x and z have different references
+        // This is basic javascript behaviour, and it applies to complex types such as objects, arrays and functions.
+        // Base types such as strings and integers are compared by value.
     )
 
     const onCountClickHandler = () => {
