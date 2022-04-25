@@ -17,6 +17,8 @@ const Counter4 = () => {
         [counter]
     );
 
+
+    // Check commits to see the other version of side effect and cleaning up when dependency array is empty
     useEffect(() => {
             subscribe(counter)
             return () => {
