@@ -11,6 +11,7 @@ const Stopwatch = () => {
 
             if (counterActive) {
                 interval = setInterval(() => {
+                    // here we can use the function, and we do not need refs
                     setTime(t => t + 1);
                 }, 1000);
             }
