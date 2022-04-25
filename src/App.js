@@ -1,10 +1,10 @@
 import React from 'react';
 import './machine.css';
-import UltimateHolidayList from "./UltimateHolidayList";
+import UltimateHolidayList2 from "./UltimateHolidayList2";
 
 const App = () => (
     <main>
-        <UltimateHolidayList/>
+        <UltimateHolidayList2/>
     </main>
 );
 
