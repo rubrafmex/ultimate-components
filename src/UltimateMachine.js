@@ -4,13 +4,13 @@ const OnMessage = () => <span>The machine is ON!</span>
 
 const OffMessage = () => <span>The machine is OFF!</span>
 
-const OnOff = ({isOn}) => {
-    if (isOn) {
-        return <OnMessage/>;
-    } else {
-        return <OffMessage/>;
-    }
-}
+// const OnOff = ({isOn}) => {
+//     if (isOn) {
+//         return <OnMessage/>;
+//     } else {
+//         return <OffMessage/>;
+//     }
+// }
 
 const UltimateMachine = () => {
     const [isOn, setIsOn] = useState(false);
@@ -26,20 +26,21 @@ const UltimateMachine = () => {
     //     message = <OffMessage/>;
     // }
 
-    const getMessage = () => {
-        if (isOn) {
-            return <OnMessage/>;
-        } else {
-            return <OffMessage/>;
-        }
-    }
+    // const getMessage = () => {
+    //     if (isOn) {
+    //         return <OnMessage/>;
+    //     } else {
+    //         return <OffMessage/>;
+    //     }
+    // }
 
     return (
         <section>
             <h1>The Ultimate Machine</h1>
             {/*<OnOff isOn={isOn} />*/}
             {/*{message}*/}
-            {getMessage()}
+            {/*{getMessage()}*/}
+            {isOn ? <OnMessage/> : <OffMessage/>}
             <button type="button" onClick={onClickHandler} aria-pressed={isOn}>
                 On/Off
             </button>
