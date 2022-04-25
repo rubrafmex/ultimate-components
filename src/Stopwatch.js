@@ -1,23 +1,15 @@
-import React, {useEffect, useState, useRef} from "react";
+import React, {useEffect, useState} from "react";
 
 const Stopwatch = () => {
     const [time, setTime] = useState(0);
     const [counterActive, setCounterActive] = useState(true)
-
-    // to fix the error in dependency array:
-    // the ref container is like an instance fields in javascript, React knows that this ref container stays the same amongst all renders
-    const currentTime = useRef(0); // react gives this hook to access a mutable value that is managed by React and shared by all render calls
 
     useEffect(() => {
             let interval = null;
 
             if (counterActive) {
                 interval = setInterval(() => {
-                    // using the ref container and removing the usage of 'time' directly in our useEffect will remove the error in our dependency array
-                    // IMPORTANT:
-                    // setting refs does not re-render components
-                    currentTime.current++
-                    setTime(currentTime.current);
+                    setTime(t => t + 1);
                 }, 1000);
             }
 
