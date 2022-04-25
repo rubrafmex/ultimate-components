@@ -1,10 +1,10 @@
 import React from 'react';
 import './machine.css';
-import Counter2 from "./Counter2";
+import Counter3 from "./Counter3";
 
 const App = () => (
     <main>
-        <Counter2/>
+        <Counter3/>
     </main>
 );
 
