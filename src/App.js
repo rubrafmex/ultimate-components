@@ -1,11 +1,11 @@
 import React from 'react';
 import './machine.css';
-import StopwatchWithErrors from "./StopwatchWithErrors";
+import Stopwatch from "./Stopwatch";
 
 const App = () => {
     return (
         <main>
-            <StopwatchWithErrors/>
+            <Stopwatch/>
         </main>
     );
 };
