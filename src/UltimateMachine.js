@@ -1,8 +1,6 @@
 import React, {useState} from "react";
 
-const OnMessage = () => <span>The machine is ON!</span>
-
-const OffMessage = () => <span>The machine is OFF!</span>
+const ErrorMessage = ({showError}) => showError ? <span>Oh no you broke it!</span> : null
 
 // const OnOff = ({isOn}) => {
 //     if (isOn) {
@@ -13,10 +11,10 @@ const OffMessage = () => <span>The machine is OFF!</span>
 // }
 
 const UltimateMachine = () => {
-    const [isOn, setIsOn] = useState(false);
+    const [showError, setShowError] = useState(false);
 
     const onClickHandler = () => {
-        setIsOn(i => !i);
+        setShowError(i => !i);
     };
 
     // let message;
@@ -40,9 +38,10 @@ const UltimateMachine = () => {
             {/*<OnOff isOn={isOn} />*/}
             {/*{message}*/}
             {/*{getMessage()}*/}
-            {isOn ? <OnMessage/> : <OffMessage/>}
-            <button type="button" onClick={onClickHandler} aria-pressed={isOn}>
-                On/Off
+            {/*{isOn ? <OnMessage/> : <OffMessage/>}*/}
+            <ErrorMessage showError={showError} />
+            <button type="button" onClick={onClickHandler} aria-pressed={showError}>
+                Toggle error
             </button>
         </section>
     );
