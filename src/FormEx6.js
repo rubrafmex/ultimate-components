@@ -10,6 +10,7 @@ const initialState = {
     breakfast: false,
     lunch: false,
     dinner: false,
+    shirtSize: '',
 };
 
 const FormEx6 = () => {
@@ -93,6 +94,36 @@ const FormEx6 = () => {
                     checked={formState.dinner}
                 />
                 <label htmlFor="dinner">Dinner</label>
+            </fieldset>
+            <fieldset>
+                <legend>T-shirt size</legend>
+                <input
+                    type="radio"
+                    id="sizeS"
+                    name="shirtSize"
+                    value="s"
+                    onChange={onChangeHandler}
+                    checked={formState.shirtSize === 's'}
+                />
+                <label htmlFor="sizeS">Small</label>
+                <input
+                    type="radio"
+                    id="sizeM"
+                    name="shirtSize"
+                    value="m"
+                    onChange={onChangeHandler}
+                    checked={formState.shirtSize === 'm'}
+                />
+                <label htmlFor="sizeM">Medium</label>
+                <input
+                    type="radio"
+                    id="sizeL"
+                    name="shirtSize"
+                    value="l"
+                    onChange={onChangeHandler}
+                    checked={formState.shirtSize === 'l'}
+                />
+                <label htmlFor="sizeL">Large</label>
             </fieldset>
             <label htmlFor="agree">I agree to the TOC</label>
             <input
