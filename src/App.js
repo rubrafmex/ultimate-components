@@ -1,11 +1,11 @@
 import React from 'react';
 import './machine.css';
-import Stopwatch from "./Stopwatch";
+import FormEx1 from "./FormEx1";
 
 const App = () => {
     return (
         <main>
-            <Stopwatch/>
+            <FormEx1/>
         </main>
     );
 };
