@@ -1,11 +1,11 @@
 import React from 'react';
 import './machine.css';
-import FormEx5 from "./FormEx5";
+import FormEx6 from "./FormEx6";
 
 const App = () => {
     return (
         <main>
-            <FormEx5/>
+            <FormEx6/>
         </main>
     );
 };
