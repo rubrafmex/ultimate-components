@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect, Fragment} from "react";
 import './form.css'
 
 const initialState = {
@@ -13,8 +13,42 @@ const initialState = {
     shirtSize: '',
 };
 
-const FormEx6 = () => {
+const loadedState = {
+    firstName: 'Rub',
+    lastName: 'Raf',
+    bio: 'salsa dance',
+    transport: 'planes',
+    agree: true,
+    breakfast: false,
+    lunch: true,
+    dinner: false,
+    shirtSize: 'm',
+};
+
+const FormContainer = () => {
+    const [data, setData] = useState(initialState)
+
+    const onSubmitHandler = formState => {
+        console.log(formState);
+    };
+
+    const onClickHandler = () => {
+        setData(loadedState);
+    };
+
+    return (
+        <Fragment>
+            <FormEx6 data={data} onSubmit={onSubmitHandler}/>
+            <button type="button" onClick={onClickHandler}>Load data</button>
+        </Fragment>);
+}
+
+const FormEx6 = ({data, onSubmit}) => {
     const [formState, setFormState] = useState(initialState)
+
+    useEffect(() => {
+        setFormState(data)
+    }, [data])
 
     const onChangeHandler = e => {
         const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
@@ -28,14 +62,8 @@ const FormEx6 = () => {
     const onSubmitHandler = e => {
         // IMPORTANT:
         e.preventDefault(); // This will instruct the browser not to run its standard event code for this event,
-        // in this case, preventDefault() will avoid reloading the page and changing the url when the form is submitted (which is standard event code for submit form event).
-        // These actions would reset our React state, and that is not something we want.
-        console.log(formState);
-    };
-
-    const onClickHandler = () => {
-        setFormState(initialState);
-    };
+        onSubmit(formState)
+    }
 
     return (
         <form onSubmit={onSubmitHandler}>
@@ -134,9 +162,8 @@ const FormEx6 = () => {
                 checked={formState.agree}
             />
             <button type="submit">Save</button>
-            <button type="button" onClick={onClickHandler}>Clear values</button>
         </form>
     );
 };
 
-export default FormEx6;
+export default FormContainer;
